@@ -39,14 +39,34 @@ button {
   font-family: inherit;
   color: currentColor;
 }
-.container {
-  width: 1158px;
-  padding-left: 15px;
-  padding-right: 15px;
-  margin: 0 auto;
+
+.visually-hidden {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  margin: -1px;
+  padding: 0;
+  overflow: hidden;
+  clip: rect(0 0 0 0);
+  clip-path: inset(100%);
+  white-space: nowrap;
+  border: 0;
 }
+
 /* =========================Header ===========================*/
 /* ==========================Logo============================ */
+.container {
+  min-width: 320px;
+  padding-left: 16px;
+  padding-right: 16px;
+  margin: 0 auto;
+}
+
+.header-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
 
 .header {
   border-bottom: 1px solid #e7e9fc;
@@ -57,11 +77,6 @@ button {
 .navigation {
   display: flex;
   align-items: center;
-}
-
-.header .container {
-  display: flex;
-  justify-content: space-between;
 }
 
 .logo {
@@ -85,76 +100,136 @@ button {
   color: #f4f4fd;
 }
 
-/* ==========================Logo============================ */
-/* ==========================Menu============================  */
 .menu-list {
-  display: flex;
+  display: none;
   gap: 40px;
 }
 
-.menu-link {
-  font-weight: 500;
-  font-size: 16px;
-  line-height: 1.5;
-  letter-spacing: 0.02em;
-  color: #2e2f42;
-  padding: 24px 0;
-  transition: color 250ms cubic-bezier(0.4, 0, 0.2, 1);
-}
-
-.menu-list .menu-item .menu-link:hover,
-.menu-list .menu-item .menu-link:focus {
-  color: #404bbf;
-}
-
-.first-link {
-  position: relative;
-  color: #404bbf;
-}
-
-.first-link::after {
-  content: "";
-  width: 100%;
-  position: absolute;
-  left: 0;
-  bottom: -1px;
-  height: 4px;
-  background-color: #404bbf;
-  border-radius: 2px;
-}
-
-/* Contacts */
-
 .address {
+  display: none;
   font-style: normal;
 }
 
-.contact-list {
+.burger-button {
   display: flex;
-  gap: 40px;
-  padding-top: 24px;
-  padding-bottom: 24px;
+  width: 24px;
+  height: 24px;
 }
 
-.contact-list-item .contact-list-item-link {
-  font-weight: 400;
-  font-size: 16px;
-  line-height: 1.5;
-  letter-spacing: 0.02em;
-  color: #434455;
-  transition: color 250ms cubic-bezier(0.4, 0, 0.2, 1);
+.burger-button:hover,
+.burger-button:focus {
+  fill: #404bbf;
+}
+/* =================================TABLET================================== */
+
+@media screen and (min-width: 768px) {
+  .header-container {
+    min-width: 768px;
+    padding-left: 15px;
+    padding-right: 15px;
+    margin: 0 auto;
+  }
+
+  .menu-list {
+    display: flex;
+    gap: 40px;
+  }
+
+  .logo {
+    margin-right: 120px;
+  }
+  /* ==========================Menu============================  */
+  .menu-link {
+    font-weight: 500;
+    font-size: 16px;
+    line-height: 1.5;
+    letter-spacing: 0.02em;
+    color: #2e2f42;
+    padding: 24px 0;
+    transition: color 250ms cubic-bezier(0.4, 0, 0.2, 1);
+  }
+
+  .menu-link:hover,
+  .menu-link:focus {
+    color: #404bbf;
+  }
+
+  .first-link {
+    position: relative;
+    color: #404bbf;
+  }
+
+  .first-link::after {
+    content: "";
+    width: 100%;
+    position: absolute;
+    left: 0;
+    bottom: -1px;
+    height: 4px;
+    background-color: #404bbf;
+    border-radius: 2px;
+  }
+
+  .address {
+    display: block;
+    font-style: normal;
+  }
+
+  .contact-list {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+    padding-top: 16px;
+    padding-bottom: 16px;
+  }
+
+  .contact-list-item-link {
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 1.5;
+    letter-spacing: 0.02em;
+    color: #434455;
+    transition: color 250ms cubic-bezier(0.4, 0, 0.2, 1);
+  }
+
+  .contact-list-item-link:hover,
+  .contact-list-item-link:focus {
+    color: #404bbf;
+  }
+
+  .burger-button {
+    display: none;
+    width: 24px;
+    height: 24px;
+  }
 }
 
-.contact-list-item .contact-list-item-link:hover,
-.contact-list-item .contact-list-item-link:focus {
-  color: #404bbf;
+/* ==================================DESKTOP================================== */
+
+@media screen and (min-width: 1158px) {
+  .header-container {
+    width: 1158px;
+    padding-left: 15px;
+    padding-right: 15px;
+    margin: 0 auto;
+  }
+
+  .contact-list {
+    flex-direction: row;
+    gap: 40px;
+    padding-top: 24px;
+    padding-bottom: 24px;
+  }
 }
 
-/* Main */
-/* Order Service */
+/* =================================/DESKTOP================================== */
+/* =================================/HEADER================================== */
+
+/* ================================= MAIN ================================== */
+/* ================================= HERO ================================== */
 
 .order {
-  max-width: 1440px;
+  max-width: 440px;
   margin-left: auto;
   margin-right: auto;
   background-color: #2e2f42;
@@ -162,24 +237,27 @@ button {
       rgba(46, 47, 66, 0.7),
       rgba(46, 47, 66, 0.7)
     ),
-    url("../images/people-office.jpg");
+    image-set(
+      url("../images/bg/people-office-mob.jpg") 1x,
+      url("../images/bg/people-office-mob@2x.jpg") 2x
+    );
   background-repeat: no-repeat;
   background-size: cover;
   background-position: center;
   width: 100%;
   text-align: center;
-  padding: 188px 0;
+  padding: 72px 0;
 }
 
 .order-title {
-  max-width: 496px;
+  max-width: 216px;
   font-weight: 700;
-  font-size: 56px;
-  line-height: 1.07;
+  font-size: 36px;
+  line-height: 1.11;
   letter-spacing: 0.02em;
   color: #fff;
   margin: 0 auto;
-  margin-bottom: 48px;
+  margin-bottom: 72px;
 }
 
 .order-button {
@@ -203,48 +281,138 @@ button {
   background-color: #404bbf;
 }
 
-/* About us */
-.visually-hidden {
-  position: absolute;
-  width: 1px;
-  height: 1px;
-  margin: -1px;
-  padding: 0;
-  overflow: hidden;
-  clip: rect(0 0 0 0);
-  clip-path: inset(100%);
-  white-space: nowrap;
-  border: 0;
+@media screen and (min-width: 768px) {
+  .order {
+    max-width: 768px;
+    background-image: linear-gradient(
+        rgba(46, 47, 66, 0.7),
+        rgba(46, 47, 66, 0.7)
+      ),
+      image-set(
+        url("../images/bg/people-office-tab.jpg") 1x,
+        url("../images/bg/people-office-tab@2x.jpg") 2x
+      );
+    padding: 112px 0;
+  }
+
+  .order-title {
+    max-width: 496px;
+    margin-bottom: 36px;
+  }
 }
 
-.about-us {
-  padding: 120px 0;
+@media screen and (min-width: 1158px) {
+  .order {
+    max-width: 1440px;
+    background-image: linear-gradient(
+        rgba(46, 47, 66, 0.7),
+        rgba(46, 47, 66, 0.7)
+      ),
+      image-set(
+        url("../images/bg/people-office-desk.jpg") 1x,
+        url("../images/bg/people-office-desk@2x.jpg") 2x
+      );
+    padding: 188px 0;
+  }
+
+  .order-title {
+    margin-bottom: 48px;
+  }
+}
+
+/* ================================= /HERO ================================== */
+/* ================================= ABOUT-US ================================== */
+.about-us-container {
+  width: 320px;
+  padding-top: 96px;
+  padding-bottom: 96px;
 }
 
 .about-us-list {
   display: flex;
-  gap: 24px;
+  flex-direction: column;
+  gap: 72px;
 }
 
-.about-us-list-item {
-  flex-basis: calc((100% - 72px) / 4);
+.about-us-icon {
+  display: none;
 }
 
 .about-us-list-title {
-  font-weight: 500;
-  font-size: 20px;
-  line-height: 1.2;
+  font-weight: 700;
+  font-size: 36px;
+  line-height: 1.11;
   letter-spacing: 0.02em;
+  text-align: center;
   color: #2e2f42;
   margin-bottom: 8px;
 }
 
 .about-us-list-text {
-  font-weight: 400;
+  font-weight: 500;
   font-size: 16px;
   line-height: 1.5;
   letter-spacing: 0.02em;
   color: #434455;
+}
+
+@media screen and (min-width: 768px) {
+  .about-us-container {
+    width: 768px;
+  }
+
+  .about-us-list {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    gap: 72px 24px;
+  }
+
+  .about-us-list-item {
+    flex-basis: calc((100% - 24px) / 2);
+  }
+
+  .about-us-list-title {
+    text-align: start;
+  }
+}
+
+@media screen and (min-width: 1158px) {
+  .about-us-container {
+    width: 1158px;
+  }
+
+  .about-us-list {
+    display: flex;
+    flex-direction: row;
+    gap: 24px;
+  }
+
+  .about-us-list-item {
+    flex-basis: calc((100% - 72px) / 4);
+  }
+
+  .about-us-icon {
+    height: 112px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border: 1px solid #8e8f99;
+    border-radius: 4px;
+    background-color: #f4f4fd;
+    margin-bottom: 8px;
+  }
+
+  .about-us-list-title {
+    font-weight: 500;
+    font-size: 20px;
+    line-height: 1.2;
+    text-align: start;
+  }
+
+  .about-us-list-text {
+    font-weight: 400;
+  }
 }
 
 /* Our crew */
@@ -442,17 +610,6 @@ button {
   letter-spacing: 0.02em;
   color: #f4f4fd;
   max-width: 264px;
-}
-
-.about-us-icon {
-  height: 112px;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  border: 1px solid #8e8f99;
-  border-radius: 4px;
-  background-color: #f4f4fd;
-  margin-bottom: 8px;
 }
 
 /* ==============ICON LIST============ */
