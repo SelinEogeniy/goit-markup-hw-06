@@ -25,6 +25,8 @@ ul {
 }
 
 img {
+  max-width: 100%;
+  height: auto;
   display: block;
 }
 
@@ -79,6 +81,12 @@ button {
   align-items: center;
 }
 
+.header-logo {
+  padding-top: 20px;
+  padding-bottom: 20px;
+  margin-right: 76px;
+}
+
 .logo {
   font-family: "Raleway", sans-serif;
   font-weight: 700;
@@ -87,9 +95,6 @@ button {
   letter-spacing: 0.03em;
   text-transform: uppercase;
   color: #4d5ae5;
-  padding-top: 20px;
-  padding-bottom: 20px;
-  margin-right: 76px;
 }
 
 .logo-black {
@@ -687,16 +692,7 @@ button {
 }
 
 /* ==================Footer============== */
-.footer-logo {
-  display: inline-block;
-  margin-bottom: 16px;
-  padding-top: 0;
-  padding-bottom: 0;
-}
 
-.footer-description {
-  margin-right: 120px;
-}
 .footer {
   background-color: #2e2f42;
   padding: 100px 0;
@@ -704,18 +700,36 @@ button {
 
 .footer-container {
   display: flex;
-  align-items: baseline;
+  flex-direction: column;
+  align-items: center;
+  gap: 72px;
 }
-.footer .footer-text {
+
+.footer-description {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: left;
+  max-width: 268px;
+  gap: 16px;
+}
+
+.footer-logo {
+  margin-bottom: 16px;
+  padding: 0;
+}
+
+.footer-text {
   font-weight: 400;
   font-size: 16px;
   line-height: 1.5;
   letter-spacing: 0.02em;
   color: #f4f4fd;
-  max-width: 264px;
 }
 
-/* ==============ICON LIST============ */
+.social-media {
+  text-align: center;
+}
 
 .social-media-text {
   font-weight: 500;
@@ -732,6 +746,7 @@ button {
   align-items: center;
   gap: 16px;
 }
+
 .socilal-media-item {
   width: 40px;
   height: 40px;
@@ -757,13 +772,12 @@ button {
   fill: #f4f4fd;
 }
 
-/* ==============/ICON LIST============ */
-
-/* ============== SUBSCRIBE============ */
-
 .footer-subscribe {
-  margin-left: 80px;
+  width: 100%;
+  max-width: 320px;
+  text-align: center;
 }
+
 .subscribe-title {
   font-weight: 500;
   font-size: 16px;
@@ -771,6 +785,13 @@ button {
   letter-spacing: 0.02em;
   color: #fff;
   margin-bottom: 16px;
+}
+
+.form-subsribe {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  align-items: center;
 }
 
 .input-subscribe {
@@ -812,10 +833,66 @@ button {
 .subscribe-svg-button {
   margin-left: 16px;
 }
+@media screen and (min-width: 768px) and (max-width: 1157px) {
+  .footer-container {
+    flex-direction: row;
+    align-items: baseline;
+    justify-content: stretch;
+    flex-wrap: wrap;
+    gap: 0;
+    width: 768px;
+    padding-left: 108px;
+  }
 
-.form-subsribe {
-  display: flex;
-  gap: 24px;
+  .social-media {
+    text-align: start;
+  }
+
+  .footer-description {
+    align-items: flex-start;
+    margin-right: 24px;
+    text-align: left;
+  }
+
+  .footer-subscribe {
+    text-align: left;
+    margin-left: 0px;
+    max-width: none;
+    margin-top: 72px;
+  }
+
+  .form-subsribe {
+    flex-direction: row;
+    gap: 24px;
+    align-items: flex-start;
+  }
+}
+/* =================== DESKTOP =================== */
+@media screen and (min-width: 1158px) {
+  .footer-container {
+    flex-direction: row;
+    align-items: baseline;
+    justify-content: center;
+    width: 1158px;
+  }
+
+  .footer-description {
+    align-items: flex-start;
+    margin-right: 120px;
+    text-align: left;
+  }
+
+  .footer-subscribe {
+    text-align: left;
+    margin-left: 80px;
+    max-width: none;
+  }
+
+  .form-subsribe {
+    flex-direction: row;
+    gap: 24px;
+    align-items: flex-start;
+  }
 }
 
 /* ============== /SUBSCRIBE============ */
@@ -1005,7 +1082,6 @@ button {
   text-decoration: underline;
 }
 
-/*============================ /MODAL-CHECKBOX ============================= */
 /* ============================= SUBMIT BUTTON ============================= */
 
 .submit-button {
@@ -1032,3 +1108,4 @@ button {
 }
 
 /* ============================= SUBMIT BUTTON ============================= */
+/*============================ /MODAL-CHECKBOX ============================= */
