@@ -219,6 +219,10 @@ button {
     margin: 0 auto;
   }
 
+  .logo {
+    margin-right: 72px;
+  }
+
   .contact-list {
     flex-direction: row;
     gap: 40px;
