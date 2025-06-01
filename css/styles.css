@@ -1080,6 +1080,8 @@ button {
   align-items: center;
   fill: transparent;
   margin-right: 8px;
+
+  transform: translateY(7.5px);
 }
 
 .visually-hidden:checked + .privacy-description .empty-checkbox {
@@ -1091,6 +1093,7 @@ button {
 .privacy-link {
   color: #4d5ae5;
   text-decoration: underline;
+  margin-left: 24px;
 }
 
 /* ============================= SUBMIT BUTTON ============================= */
