@@ -308,7 +308,7 @@ button {
   }
 
   .order {
-    max-width: 768px;
+    /* max-width: 768px;  adaptive-bg*/
     background-image: linear-gradient(
         rgba(46, 47, 66, 0.7),
         rgba(46, 47, 66, 0.7)
